@@ -17,7 +17,7 @@ Class Menuitems extends DB
             // Return the array into a variable so that 
             // we cannot call a function each time it loops through. 
             // This way the code is more faster
-            $this->menuItems = explode(",", $data['modules']); 
+            $this->menuItems = json_decode($data['modules']); //Decode Json Data to Array(Since we inserted modules id as json object in DB)
             return;
 
         }

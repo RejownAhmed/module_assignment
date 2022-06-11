@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2022 at 04:24 PM
+-- Generation Time: Jun 11, 2022 at 04:45 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -76,9 +76,9 @@ CREATE TABLE `plans` (
 --
 
 INSERT INTO `plans` (`id`, `name`, `modules`, `date`) VALUES
-(1, 'basic', '1,4', '2022-04-13 20:41:15.000000'),
-(2, 'bronze', '1,4,9', '2022-04-13 20:41:26.000000'),
-(3, 'gold', '1,4,9,11,12', '2022-04-13 20:45:32.000000');
+(1, 'basic', '[\"1\",\"4\"]', '2022-04-13 20:41:15.000000'),
+(2, 'bronze', '[\"1\",\"4\",\"9\"]', '2022-04-13 20:41:26.000000'),
+(3, 'gold', '[\"1\",\"4\",\"9\",\"11\",\"12\"]', '2022-04-13 20:45:32.000000');
 
 --
 -- Indexes for dumped tables
