@@ -15,7 +15,7 @@ Class Menuitems extends DB
         if ($query->num_rows) { //if there is any data found
             $data = $query->fetch_assoc();
             // Return the array into a variable so that 
-            // menus() function cannot call a function each time it loops through. 
+            // we cannot call a function each time it loops through. 
             // This way the code is more faster
             $this->menuItems = explode(",", $data['modules']); 
             return;
@@ -81,7 +81,6 @@ Class Menuitems extends DB
 
     }
 }
-
 
 $user = new User();
 $menuItems = new Menuitems($user->package);
