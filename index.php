@@ -1,4 +1,4 @@
 <?php
-require './Controllers/menus.php';
+require './Template/menus.php';
 
 $menuItems->show();
