@@ -1,4 +1,4 @@
 <?php
-require './Controllers/sideMenus.php';
+require './Controllers/menus.php';
 
 $menuItems->show();
