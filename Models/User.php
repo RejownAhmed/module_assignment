@@ -4,7 +4,7 @@ Class User {
     public $package;
 
     function __CONSTRUCT(){
-        $this->package = 'bronze';
+        $this->package = 'gold';
     }
 }
 

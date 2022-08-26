@@ -26,7 +26,7 @@ Class Menuitems extends DB
 
     }
 
-    public function show(){
+    public function show(  ){
 
         $query = $this->DB->query("SELECT * FROM `modules` WHERE `parent_id`= 0");
         if ($query->num_rows) {
@@ -36,9 +36,15 @@ Class Menuitems extends DB
             while($module = $query->fetch_assoc())
             {
                 if(in_array($module["id"], $this->menuItems)){// Checking if this module has been granted to the user package
-                    $html .='<li>'
+                    
+                    $submenu = $this->menus($module['id']); //Calling its 
+                    $class = "";
+                    if ($submenu) {
+                        $class = "active";
+                    }
+                    $html .='<li class="'.$class.'">'
                                 .$module['title'].
-                                 $this->menus($module['id']). //Calling its menus
+                                $submenu.
                             '</li>';
 
                 }
@@ -60,14 +66,19 @@ Class Menuitems extends DB
 
             $html = '<ul>';
 
-            while($menu = $query->fetch_assoc())
+            while( $menu = $query->fetch_assoc() )
             {
-                $html .='<li><a href="'
+                $submenu = $this->menus($menu['id']); //Calling its 
+                $class = "";
+                if ($submenu) {
+                    $class = "active";
+                }
+                $html .='<li class="'.$class.'"><a href="'
                             .$menu['link']. //menu link
                         '">'
                             .$menu['title']. //menu title/heading
                         '</a>'
-                            .$this->menus($menu['id']). //recursive function to generate multilevel menus
+                            .$submenu. //recursive function to generate multilevel menus
                         '</li>'; 
         
             }

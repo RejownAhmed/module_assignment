@@ -1,4 +1,4 @@
 <?php
 require './Template/menus.php';
 
-$menuItems->show();
+$menuItems->show();//Classs, id, li Class, Li has child
